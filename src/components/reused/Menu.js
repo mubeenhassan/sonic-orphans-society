@@ -9,7 +9,7 @@ export default function Menu() {
     </label>
   <div className="menu-bar">
    <ul className="menu-link">
-    <li><a href="#buy_an_ape">buy an ape</a></li>
+    <li><a href="#buy_an_orphan">buy an orphan</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#team">team</a></li>
    </ul>
