@@ -1,6 +1,6 @@
 import React from 'react'
 import Socials from '../reused/Socials'
-import footerLogo from '../../assests/images/footer-logo.png'
+import footerLogo from '../../assests/images/logo.jpg'
 
 export default function Footer() {
   return (
@@ -24,10 +24,10 @@ export default function Footer() {
             <p>© 2021 Yuga Labs LLC</p>
             <div className='footer-links'>
               <a href='/' className='tos'>
-                BAYC Terms & Conditions
+              TSOS Terms & Conditions
               </a>
               <a href='/' className='tos'>
-                MAYC Terms & Conditions
+              TSOS Terms & Conditions
               </a>
             </div>
           </div>

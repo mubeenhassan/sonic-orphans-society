@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import mainVideo from '../assests/videos/club-landing.mp4'
-import logo from '../assests/images/logo.png'
+import bg from '../assests/images/bg.jpeg'
 import Footer from './reused/Footer';
 import Socials from './reused/Socials'
 
@@ -10,11 +9,9 @@ export default function Main() {
     <>
       <div className='main-container'>
         <div className='main-section-01'>
-          <video className='video' loop>
-            <source src={mainVideo} type='video/mp4' />
-          </video>
+          <img src={bg} className='video' alt="" />          
           <Link to='/'>
-            <img className='logo' src={logo} alt='logo' />
+            <div className="logo">TSOS</div>
           </Link>
           <Socials/>
           <div className='welcome-container'>

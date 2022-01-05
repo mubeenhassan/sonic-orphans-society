@@ -6,7 +6,7 @@
 }
 .home-container .logo {
   position: static;
-  max-width: 200px;
+  transform:none;
 }
 
 .nav-container {
@@ -97,8 +97,22 @@
   align-items: center;
   justify-content: center;
   color: black;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+.gallery-images{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+}
+
+.gallery-images img{
+  max-width:200px;
+  margin: 16px;
+  box-sizing: border-box;
+}
 .buy-an-ape a {
   text-decoration: none;
   background-color: #000;
@@ -122,7 +136,7 @@
 }
 
 .buy-an-ape > * {
-  flex: 0 0 33%;
+  flex: 0 0 50%;
 }
 
 .buy-an-ape > a:hover,
@@ -141,6 +155,10 @@
   justify-content: space-between;
   color: #fff;
   margin: 0 auto;
+}
+
+.gallery{
+  flex-direction: column;
 }
 
 .left-the-specs {
@@ -369,6 +387,9 @@ color: white;
   .home-container {
     width: 90%;
   }
+  .gallery-images{
+    justify-content:center;
+  }
 
  
   .club-section {
@@ -403,10 +424,6 @@ color: white;
 
   .buy-an-ape {
     flex-direction: column;
-  }
-
-  .buy-an-ape p {
-    margin: 24px auto;
   }
 
   .buy-an-ape a {

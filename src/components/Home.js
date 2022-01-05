@@ -2,33 +2,46 @@ import React from 'react'
 import Footer from './reused/Footer'
 import Socials from './reused/Socials'
 import '../assests/styles/home.css'
-import logo from '../assests/images/logo.png'
 import mainImage from '../assests/images/bayc-mutant-hero.jpg'
-import ape1 from '../assests/images/ape1.png'
-import ape2 from '../assests/images/ape2.png'
-import ape3 from '../assests/images/ape3.png'
-import ape4 from '../assests/images/ape4.png'
-import gif from '../assests/images/mystery-ape.gif'
+import orphans1 from '../assests/images/orphans1.jpg'
+import orphans2 from '../assests/images/orphans2.jpg'
+import orphans3 from '../assests/images/orphans3.jpg'
+import orphans4 from '../assests/images/orphans4.jpg'
+import gif from '../assests/images/images.gif'
 import icon1 from '../assests/images/icon1.png'
 import icon2 from '../assests/images/icon2.png'
 import icon3 from '../assests/images/icon3.png'
 import icon4 from '../assests/images/icon4.png'
 import icon5 from '../assests/images/icon5.png'
-import toilet from '../assests/images/toilet.png'
-import shirt from '../assests/images/shirt.png'
 import ape5 from '../assests/images/priel.jpg'
 import ape6 from '../assests/images/tim.jpg'
 import ape7 from '../assests/images/niko.jpg'
 import ape8 from '../assests/images/faiz.jpg'
 import Menu from './reused/Menu'
 
+const IMAGES = ['orphan1.jpg', 'orphan2.jpg', 'orphan3.jpg', 'orphan4.jpg', 'orphan5.jpg', 'orphan6.jpg', 'orphan7.jpg', 'orphan8.jpg', 'orphan9.jpg', 'orphan10.jpg', 'orphan11.jpg', 'orphan12.jpg', 'orphan13.jpg', 'orphan14.jpg', 'orphan15.jpg', 'orphan16.jpg', 'orphan17.jpg', 'orphan18.jpg', 'orphan19.jpg', 'orphan20.jpg', 'orphan21.jpg', 'orphan22.jpg', 'orphan23.jpg', 'orphan24.jpg', 'orphan25.jpg', 'orphan26.jpg', 'orphan27.jpg', 'orphan28.jpg', 'orphan29.jpg', ]
 export default function Home() {
+
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+  const images = importAll(require.context('../assests/images/oprhans/', false, /\.(png|jpe?g|svg)$/));
+  
+  const renderGallery=()=>{
+    return IMAGES.map((item)=>{
+      return <img src={images[item]}/>
+    })
+}
+
   return (
     <div>
       <div div className='home-container'>
+
         <div className='nav-container'>
           <div className='logo-container'>
-            <img src={logo} alt='logo' className='logo' />
+            <div className="logo">TSOS</div>
           </div>
           <Menu />
           <Socials />
@@ -37,7 +50,7 @@ export default function Home() {
 
         <div className='club-section'>
           <div className='club-title'>
-            <h1>WELCOME TO THE BORED APE YACHT CLUB</h1>
+            <h1>WELCOME TO THE SONIC ORPHAN SOCIETY</h1>
             <p>
               The Sonic Orphans’ Society Is a collection of 10,000 Orphan NFTs -
               one of a kind digital collectibles living on the Ethereum
@@ -48,10 +61,10 @@ export default function Home() {
             </p>
           </div>
           <div className='club-images'>
-            <img src={ape1} alt='ape1' />
-            <img src={ape2} alt='ape2' />
-            <img src={ape3} alt='ape3' />
-            <img src={ape4} alt='ape4' />
+            <img src={orphans1} alt='orphans1' />
+            <img src={orphans2} alt='orphans2' />
+            <img src={orphans3} alt='orphans3' />
+            <img src={orphans4} alt='orphans4' />
           </div>
         </div>
 
@@ -60,23 +73,17 @@ export default function Home() {
             <h3>FAIR DISTRIBUTION</h3>
             <h4>(BONDING CURVES ARE A PONZI)</h4>
             <p>
-              There are no bonding curves here. Buying a Bored Ape costs 0.08
-              ETH. There are no price tiers; BAYC membership costs the same for
+              There are no bonding curves here. Buying an Orphan costs 0.07
+              ETH. There are no price tiers; TSOS membership costs the same for
               everyone.
             </p>
           </div>
           <p className='fd-02'>
-            Note: Thirty apes are being withheld from the sale. These will be
-            used for giveaways, puzzle rewards—and for the creators' BAYC
-            memberships.
+            Note: Thirty orphans are being withheld from the sale. These will be used for giveaways, puzzle rewards, and for creators' TSOS memberships
           </p>
-          <div id='buy_an_ape' className='buy-an-ape'>
-            <h2>BUY AN APE</h2>
-            <p>
-              The initial sale has sold out. To get your Bored Ape, check out
-              the collection on OpenSea.
-            </p>
-            <a href='/'>BUY AN APE ON OPENSEA</a>
+          <div id='buy_an_orphan' className='buy-an-ape'>
+            <h2>BUY AN ORPHAN</h2>
+            <a href='/'>BUY AN ORPHAN ON OPENSEA</a>
           </div>
         </div>
 
@@ -385,24 +392,10 @@ export default function Home() {
         </div>
 
         <hr className='seprator-small' />
-        <div className='the-specs-content'>
-          <div className='left-the-specs'>
-            <h2 className='h2-heading'>THE SPECS</h2>
-            <p className='nomral-text'>
-              Each Bored Ape is unique and programmatically generated from over
-              170 possible traits, including expression, headwear, clothing, and
-              more. All apes are dope, but some are rarer than others.
-              <br />
-              The apes are stored as ERC-721 tokens on the Ethereum blockchain
-              and hosted on IPFS. <a href='#'>(See Record and Proof.) </a>{' '}
-              Purchasing an ape costs 0.08 ETH.
-              <br />
-              To access members-only areas such as <a href='#'>THE BATHROOM</a>,
-              Apeholders will need to be signed into their Metamask Wallet.
-            </p>
-          </div>
-          <div className='right-the-specs'>
-            <img src={gif} />
+        <div className='the-specs-content gallery'>
+            <h2 className='h2-heading'>TBD</h2>
+          <div className='gallery-images'>
+          {renderGallery()}
           </div>
         </div>
 
@@ -457,102 +450,6 @@ export default function Home() {
         </div>
 
         <hr className='seprator-small' />
-        <div className='the-specs-content'>
-          <div className='left-the-specs'>
-            <h2 className='h2-heading'>THE BATHROOM</h2>
-            <p className='nomral-text'>
-              The BAYC Bathroom will become operational once the presale period
-              is over. It contains a canvas accessible only to wallets
-              containing at least one ape. Like any good dive bar bathroom, this
-              is the place to draw, scrawl, or write expletives.
-              <br />
-              <br />
-              Each ape-holder will be able to paint a pixel on the bathroom wall
-              every fifteen minutes. Think of it as a collaborative art
-              experiment for the cryptosphere. A members-only canvas for the
-              discerning minds of crypto twitter.
-              <br />
-              <br />
-              We're pretty sure it's going to be full of dicks.
-            </p>
-          </div>
-          <div className='right-the-specs'>
-            <img src={toilet} className='toilet-img' />
-          </div>
-        </div>
-
-        <hr className='seprator-small' />
-        <div className='the-specs-content' id='roadmap'>
-          <div className='left-the-specs'>
-            <h2 className='h2-heading'>ROADMAP ACTIVATIONS</h2>
-            <p className='nomral-text'>
-              We’re in this for the long haul.
-              <br />
-              <br />
-              We’ve set up some goalposts for ourselves. Once we hit a target
-              sell through percentage, we will begin to work on realizing the
-              stated goal. We're pretty sure it's going to be full of dicks.
-            </p>
-            <div className='road-map-activites'>
-              <div className='percentage'>0%</div>
-              <div className='rma-text'>
-                Pre-sale Main characters will be revealed Listening party for
-                discord members
-              </div>
-
-              <div className='percentage'>25%</div>
-              <div className='rma-text'>
-                3 ETH to 3 Lucky Holders First orphanage donation
-              </div>
-
-              <div className='percentage'>50%</div>
-              <div className='rma-text'>
-                Merch store launched First music album released 2 rare NFTs held
-                back from sale airdropped to holders
-              </div>
-
-              <div className='percentage'>75%</div>
-              <div className='rma-text'>
-                DAO Initialization Exclusive pieces come out in merch store 3
-                rare NFTs held back from sale airdropped to holders
-              </div>
-
-              <div className='percentage'>100%</div>
-              <div className='rma-text no-line'>
-                2nd drop of 5,000 date will be announced Society meetup in
-                Atlanta announced 2nd orphanage donation
-              </div>
-            </div>
-          </div>
-          <div className='right-the-specs' style={{ justifyContent: 'center' }}>
-            <div className='shirt-img'>
-              <img src={shirt} />
-            </div>
-          </div>
-        </div>
-
-        <hr className='seprator-small' />
-        <div className='the-specs-content'>
-          <div className='left-the-specs'>
-            <h2 className='h2-heading'>COMMUNITY TOOLS</h2>
-            <p className='nomral-text'>
-              Here are some helpful tools created by the Bored Ape Yacht Club
-              community. Please note that these are unofficial in nature. Every
-              assignment of an ape's overall value or rarity is inherently
-              subjective.
-            </p>
-          </div>
-          <div className='right-the-specs community-links'>
-            <a href='/' className='community-link'>
-              NFTEXP.IO
-            </a>
-            <a href='/' className='community-link'>
-              RARITY.TOOLS
-            </a>
-          </div>
-        </div>
-
-        <hr className='seprator-small' />
         <div className='club-section' id='team'>
           <div className='club-title'>
             <h1>THE TEAM</h1>
@@ -585,7 +482,7 @@ export default function Home() {
 
         <p className='address-link'>
           VERIFIED SMART CONTRACT ADDRESS:{' '}
-          <a href='/'>0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D</a>
+          <a href='/'>TBD</a>
         </p>
       </div>
       <Footer />
